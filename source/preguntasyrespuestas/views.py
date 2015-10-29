@@ -46,7 +46,7 @@ def pregunta_crear(request):
 def pregunta_editar(request, pregunta_id):
 	pregunta = get_object_or_404(Pregunta, pk=pregunta_id)
 	if request.method == 'POST':
-		form = PreguntaForm(request.POST, instace=pregunta)
+		form = PreguntaForm(request.POST, instance=pregunta)
 		if form.is_valid():
 			form.save()
 			return redirect('pregunta_detalle', pregunta_id)
