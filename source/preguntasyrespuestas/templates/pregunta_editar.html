@@ -2,7 +2,16 @@
 {% block title %}Editar una pregunta{% endblock %}
 {% block content %}
 	<form action="" method="post">{% csrf_token %}
-		{{ form.as_p }}
+		{# form.as_p #}
+		{% for field in form %}
+			<div class="field_container">
+				{{ field.errors }}
+				{{ field.label_tag }} </br>
+				{{ field }}
+			</div>
+		{% endfor %}
 		<input type="submit" value="Submit">
 	</form>
 {% endblock %}
+
+{{ form.asunto.errors }}
