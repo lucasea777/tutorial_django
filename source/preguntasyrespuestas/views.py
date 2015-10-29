@@ -43,3 +43,15 @@ def pregunta_crear(request):
 		{'form':form},
 		context_instance=RequestContext(request)) #aseguracion de las variables mandados por HTTP
 
+def pregunta_editar(request, pregunta_id):
+	pregunta = get_object_or_404(Pregunta, pk=pregunta_id)
+	if request.method == 'POST':
+		form = PreguntaForm(request.POST, instace=pregunta)
+		if form.is_valid():
+			form.save()
+			return redirect('pregunta_detalle', pregunta_id)
+	else:
+		form = PreguntaForm(instance=pregunta)
+	return render_to_response('pregunta_editar.html',
+		{'form': form},
+		context_instance=RequestContext(request))

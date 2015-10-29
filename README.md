@@ -36,15 +36,27 @@ https://www.youtube.com/embed?listType=playlist&list=PLEtcGQaT56cg3A3r-TNoc-PyVe
 
 ### Instrucciones generales
 * Crear proyecto
+
 	`$ python django-admin.py startproyect <nombre>`
+
 * Correr Proyecto
+
 	`$ python manage.py runserver`
+
 * Crear App
+
 	`$ python manage.py startapp preguntasyrespuestas`
+
 * Crear superusuario
+
 	`$ python manage.py createsuperuser --username=admin --email=admin@example.com`
+
 * Migrar cambio de modelos
+
 	`$ python manage.py makemigrations`
+
 	`$ python manage.py migrate`
+
 * Limpiar base de datos
+
 	`$ python manage.py flush`
